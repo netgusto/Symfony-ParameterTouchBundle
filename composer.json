@@ -1,0 +1,29 @@
+{
+    "name": "netgusto/parametertouch-bundle",
+    "version": "1.0.0",
+    "type": "symfony-bundle",
+    "description": "Symfony2 BootCamp Bundle",
+    "keywords": ["symfony"],
+    "homepage": "https://github.com/netgusto/Symfony-ParameterTouchBundle",
+    "license": "MIT",
+    "authors": [
+        {
+          "name": "Net Gusto",
+          "email": "contact@netgusto.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3",
+        "symfony/framework-bundle": "~2.4"
+    },
+    "require-dev": {
+    },
+    "suggest": {
+    },
+    "autoload": {
+        "psr-0": { "Netgusto\\ParameterTouchBundle": "" }
+    },
+    "target-dir": "Netgusto/ParameterTouchBundle",
+    "extra": {
+    }
+}
