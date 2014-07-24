@@ -24,6 +24,26 @@ class ScriptHandler
         }
 
         $fs = new Filesystem();
-        $fs->touch($configs);
+
+        foreach($configs as $config) {
+            if(is_string($config)) {
+                $fs->touch($config);
+                continue;
+            }
+
+            if(is_array($config)) {
+                $src = $config['src'];
+                $dest = $config['dest'];
+
+                if(!$fs->exists($src)) {
+                    throw new IOException("ParameterTouchBundle: source file does not exist: '" . $src . "'");
+                }
+
+                if(!$fs->exists($dest)) {
+                    # copy only if dest file does not exist
+                    $fs->copy($src, $dest);
+                }
+            }
+        }
     }
 }
